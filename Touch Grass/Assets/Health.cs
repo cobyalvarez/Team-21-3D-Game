@@ -5,27 +5,21 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public Image HealthBar;
-    public float amount = 100;
-    //restarts if it reaches 0
-    private void Update(){
-        if(amount<=0){
-            Application.LoadLevel(Application.loadedLevel);
-        }
+    [SerializeField] private float maxHealth;
+    public float health;
+    public HeathBar healthb;
 
+    private void start(){
+        health=maxHealth; 
+        healthb.SetSliderMax(maxHealth);
     }
-    //Still need to set amount for damage each hit maybe 20 
-    //Code works to take damage and reflect it on the health bar
-    public void TakeDamage(float Damage){
-        amount -= Damage;
-        HealthBar.fillAmount = healthAmount/100;
-    }
-    // Trying to use triggers so when it interacts with a enemy it takes damage 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemy")) 
-        {
-            TakeDamage();
+
+    public void TakeDamage(float damage){
+        health -= damage;
+        healthb.SetSlider(health);
+        // HealthBar.fillAmount = amount/100;
+        if(health<=0){
+            Application.LoadLevel(Application.loadedLevel);
         }
     }
 }
