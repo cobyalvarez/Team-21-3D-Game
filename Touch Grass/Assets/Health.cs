@@ -6,20 +6,25 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
-    public float health;
+    public float chealth;
     public HeathBar healthb;
 
-    private void start(){
-        health=maxHealth; 
+    private void Start(){
+        chealth=maxHealth; 
         healthb.SetSliderMax(maxHealth);
     }
 
     public void TakeDamage(float damage){
-        health -= damage;
-        healthb.SetSlider(health);
+        chealth -= damage;
+        healthb.SetSlider(chealth);
         // HealthBar.fillAmount = amount/100;
-        if(health<=0){
+        if(chealth<=0){
             Application.LoadLevel(Application.loadedLevel);
+        }
+    }
+    private void Update(){
+        if(chealth>maxHealth){
+            chealth=maxHealth;
         }
     }
 }
