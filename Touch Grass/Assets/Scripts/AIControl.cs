@@ -24,14 +24,13 @@ public class AIControl : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange; 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private void Awake(){
+        player = GameObject.Find("Slime_01_King").transform;
+        agent = GetComponent<NavMeshAgent>();
+    } 
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
      //Check for enemy sight range and their range of attack
      playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
@@ -44,24 +43,9 @@ public class AIControl : MonoBehaviour
     if(playerInSightRange && !playerInAttackRange){
         Chase();
     }
-    if(playerInSightRange&&playerInAttackRange){
+    if(playerInSightRange && playerInAttackRange){
         Attack();
     }
-    }
-
-    private void Awake(){
-        player = GameObject.Find("Player").transform;
-        agent = GetComponent<NavMeshAgent>();
-    } 
-
-    private void SearchWalkPoint(){
-        float currx = 0;
-        float currz = Random.Range(-4,4);
-        walkPoint = new Vector3(transform.position.x + currx,transform.position.y, transform.position.z + currz);
-
-        if(Physics.Raycast(walkPoint,-transform.up,2f,whatIsGround)){
-            walkPointSet=true;
-        }
     }
 
     private void Patroling(){
@@ -74,8 +58,18 @@ public class AIControl : MonoBehaviour
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        if(distanceToWalkPoint.magnitude< 0.5f){
+        if(distanceToWalkPoint.magnitude< 1f){
             walkPointSet=false;
+        }
+    }
+
+    private void SearchWalkPoint(){
+        float currx = Random.Range(-walkPointRange,walkPointRange);
+        float currz = Random.Range(-walkPointRange,walkPointRange);
+        walkPoint = new Vector3(transform.position.x + currx,transform.position.y, transform.position.z + currz);
+
+        if(Physics.Raycast(walkPoint,-transform.up,2f,whatIsGround)){
+            walkPointSet=true;
         }
     }
 
@@ -88,10 +82,15 @@ public class AIControl : MonoBehaviour
 
         transform.LookAt(player);
 
-        // if(!attacked = true){
-        //     attacked=true;
-        //     invoke()
-        // }
+        if(!attacked){
+            attacked=true;
+            Invoke(nameof(ResetAttack),timeAttacks);
+        }
     }
+
+    private void ResetAttack(){
+        attacked=false;
+    }
+
 
 }
