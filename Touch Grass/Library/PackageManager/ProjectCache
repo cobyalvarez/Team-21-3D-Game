@@ -6,7 +6,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638352012310000000
+      ticks: 638354615290000000
     m_Hash: 4105955630
   m_LockFileStatus:
     m_FilePath: /Users/cobyalvarez/Desktop/Game Design Project/Team-21-3D-Game/Touch
@@ -15,7 +15,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638352012320000000
+      ticks: 638354615290000000
     m_Hash: 1659869605
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -402,10 +402,12 @@ m_ResolvedPackages:
     - 1.6.3
     - 1.7.0
     - 1.8.0-pre.1
+    - 1.8.0-pre.2
     compatible:
     - 1.6.3
     - 1.7.0
     - 1.8.0-pre.1
+    - 1.8.0-pre.2
     recommended: 1.6.3
     deprecated: []
   dependencies:
