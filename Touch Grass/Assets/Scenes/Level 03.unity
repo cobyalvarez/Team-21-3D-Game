@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 121758488}
   - component: {fileID: 121758487}
   - component: {fileID: 121758490}
+  - component: {fileID: 121758491}
   m_Layer: 6
   m_Name: platform (4)
   m_TagString: Untagged
@@ -489,6 +490,18 @@ MonoBehaviour:
   - {fileID: 962952809}
   - {fileID: 89076414}
   speed: 1
+--- !u!114 &121758491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121758485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155363776bf5045b4b513144459ba007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &171544700
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +910,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &934234732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 934234733}
+  m_Layer: 6
+  m_Name: waypoint 2
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &934234733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934234732}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.85, y: 0, z: -5.63}
+  m_LocalScale: {x: 0.5, y: 1, z: 0.2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1987620369}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &954648986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,7 +1899,7 @@ GameObject:
   m_Layer: 0
   m_Name: waypoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3018,6 +3062,7 @@ Transform:
   m_Children:
   - {fileID: 1644598201}
   - {fileID: 1296383451}
+  - {fileID: 934234733}
   m_Father: {fileID: 1029937792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7622400428428870819
