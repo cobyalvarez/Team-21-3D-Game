@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Spawn/Assets/Prefabs/SpawnPoint.prefab.meta
 guid: b5e447e9979631045b8e02c70e440c4c
+=======
+guid: 0f2ffaa329c7eb64db6a814c67fb6513
+>>>>>>> 47886e2729dff89cba0ff706a84f668548603200:Touch Grass/Assets/Prefabs/SpawnPoint.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
