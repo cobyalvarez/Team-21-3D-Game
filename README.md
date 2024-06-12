@@ -1,4 +1,4 @@
-# {{Touch Grass 3D Game}}
+# Touch Grass 3D Game
 CS 4555 3D Game
 
 # Application Used
@@ -9,3 +9,6 @@ CS 4555 3D Game
 
 ## Languages used
 - C#
+
+## Description:
+- Developed a 3d unity platform game with 4 levels. Each level is a different mini game such as mario, obstacles, and a maze. The game contains physics, health, and is 3rd person.
